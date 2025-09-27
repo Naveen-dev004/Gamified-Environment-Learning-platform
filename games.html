@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Games - EcoLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/games.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<li><a class="nav-protected hidden" href="community.html">community</a> </li>
+<li><a class="nav-protected hidden" href="DIY.html">DIY</a> </li>
+<li class="nav-protected"><a href="games.html" id="games-link">Games</a></li>
+<li class="nav-protected"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="help.html"><i class="fas fa-question-circle"></i> Help &amp; Support</a>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<main class="main-content">
+<div class="container">
+<div class="page-header">
+<h1>Games &amp; Challenges</h1>
+<p>Learn environmental concepts through interactive games and track your progress</p>
+</div>
+<!-- User Stats Bar -->
+<div class="user-stats-bar">
+<div class="stat-item">
+<div class="stat-value" id="user-points">0</div>
+<div class="stat-label">EcoPoints</div>
+</div>
+<div class="stat-item">
+<div class="stat-value" id="user-level">1</div>
+<div class="stat-label">Level</div>
+</div>
+<div class="stat-item">
+<div class="stat-value" id="user-streak">0</div>
+<div class="stat-label">Day Streak</div>
+</div>
+<div class="stat-item">
+<div class="stat-value" id="user-achievements">0</div>
+<div class="stat-label">Achievements</div>
+</div>
+<button class="daily-reward" id="daily-reward-btn">
+<i class="fas fa-gift"></i>
+<span>Daily Reward</span>
+</button>
+<div class="streak-indicator">
+<i class="fas fa-fire"></i>
+<span class="streak-count" id="streak-count">0 day streak</span>
+</div>
+</div>
+<!-- Special Event Banner -->
+<div class="special-event-banner">
+<div class="event-info">
+<div class="event-title">Earth Day Challenge</div>
+<div class="event-description">Complete special challenges to earn exclusive rewards and limited-time achievements!</div>
+<div class="event-timer">
+<i class="fas fa-clock"></i>
+<span id="event-timer">2 days 14:32:18</span>
+</div>
+</div>
+<button class="event-action">Join Challenge</button>
+</div>
+<!-- Daily Challenges -->
+<div class="games-section">
+<h2 style="margin-bottom: 20px; color: var(--primary-green);">Daily Challenges</h2>
+<div id="daily-challenges">
+<!-- Daily challenges will be inserted here by JavaScript -->
+</div>
+</div>
+<div id="games-content">
+<!-- Games section will be inserted here by JavaScript -->
+</div>
+</div>
+</main>
+<div class="game-modal" id="game-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="modal-title" id="modal-title">Game Title</h3>
+<div class="modal-close" id="modal-close">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="modal-body">
+<div class="game-container" id="game-container">
+<!-- Game content will be inserted here by JavaScript -->
+</div>
+</div>
+</div>
+</div>
+<div class="leaderboard-modal" id="leaderboard-modal">
+<div class="leaderboard-content">
+<div class="leaderboard-header">
+<h3 class="leaderboard-title">Leaderboard</h3>
+<div class="modal-close" id="leaderboard-close">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="leaderboard-tabs">
+<div class="leaderboard-tab active" data-tab="global">Global</div>
+<div class="leaderboard-tab" data-tab="friends">Friends</div>
+<div class="leaderboard-tab" data-tab="weekly">Weekly</div>
+</div>
+<div class="leaderboard-list" id="leaderboard-list">
+<!-- Leaderboard content will be inserted here by JavaScript -->
+</div>
+</div>
+</div>
+<div class="achievement-popup" id="achievement-popup">
+<div class="achievement-header">
+<div class="achievement-icon" id="achievement-icon">
+<i class="fas fa-trophy"></i>
+</div>
+<div class="achievement-title" id="achievement-title">Achievement Unlocked!</div>
+</div>
+<div class="achievement-description" id="achievement-description">
+            You've unlocked a new achievement!
+        </div>
+<div class="achievement-reward">
+<div class="reward-label">Reward:</div>
+<div class="reward-value" id="achievement-reward">50 EcoPoints</div>
+</div>
+</div>
+<div class="sound-toggle" id="sound-toggle">
+<i class="fas fa-volume-up" id="sound-icon"></i>
+</div>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/games.js"></script></body>
+</html>

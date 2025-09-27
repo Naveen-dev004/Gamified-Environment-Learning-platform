@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoLearn - Learn. Act. Change the Planet.</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/index.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<!-- <li><a href="login.html">Login</a></li> -->
+<!-- <li><a href="signup.html">Sign Up</a></li> -->
+<li><a class="nav-protected hidden" href="community.html">community</a> </li>
+<li><a class="nav-protected hidden" href="DIY.html">DIY</a> </li>
+<li class="nav-protected hidden"><a href="games.html">Games</a></li>
+<li class="nav-protected hidden"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Learn. Act. Change the Planet.</h1>
+<p>Gamified environmental education for India's next generation</p>
+<div class="globe-container">
+<canvas id="globe-canvas"></canvas>
+<div class="hotspot" id="hotspot-1"></div>
+<div class="hotspot" id="hotspot-2"></div>
+<div class="hotspot" id="hotspot-3"></div>
+<div class="hotspot" id="hotspot-4"></div>
+<div class="eco-fact" id="fact-1">
+                        Trees absorb CO2 and release oxygen, helping combat climate change.
+                    </div>
+<div class="eco-fact" id="fact-2">
+                        Recycling one ton of paper saves 17 trees and 7,000 gallons of water.
+                    </div>
+<div class="eco-fact" id="fact-3">
+                        Solar energy is renewable and produces no air pollution or greenhouse gases.
+                    </div>
+<div class="eco-fact" id="fact-4">
+                        Rivers provide freshwater for drinking, agriculture, and industry.
+                    </div>
+</div>
+<div class="cta-buttons">
+<a class="btn btn-primary hide-when-logged-in" href="login.html">
+<span>Login</span>
+</a>
+<a class="btn btn-secondary hide-when-logged-in" href="signup.html">
+<span>Sign Up</span>
+</a>
+<a class="btn btn-quaternary nav-protected show-when-logged-in" href="learning.html">
+<i class="fas fa-book-open"></i>
+<span>Explore Learning</span>
+</a>
+<a class="btn btn-primary nav-protected show-when-logged-in" href="community.html">
+<i class="fas fa-users"></i>
+<span>Community</span>
+</a>
+<a class="btn btn-secondary nav-protected show-when-logged-in" href="DIY.html">
+<i class="fas fa-hands"></i>
+<span>DIY Projects</span>
+</a>
+<a class="btn btn-tertiary nav-protected show-when-logged-in" href="games.html">
+<i class="fas fa-gamepad"></i>
+<span>Games</span>
+</a>
+<a class="btn btn-quaternary nav-protected show-when-logged-in" href="results.html">
+<i class="fas fa-trophy"></i>
+<span>Results</span>
+</a>
+</div>
+<div class="eco-counter">
+<div class="counter-item">
+<i class="fas fa-recycle"></i>
+<span>12,458 kg waste recycled</span>
+</div>
+<div class="counter-item">
+<i class="fas fa-tree"></i>
+<span>3,220 trees planted</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="section-title">
+<h2>The Problem</h2>
+<p>Why environmental education needs a transformation in India</p>
+</div>
+<div class="problem-container">
+<div class="problem-content">
+<h3>Theory Without Practice</h3>
+<p>Environmental education in India is predominantly theoretical, with students memorizing facts from textbooks without practical application. This approach fails to instill genuine environmental consciousness or inspire actionable change.</p>
+<p>According to recent studies, over 75% of Indian students cannot connect classroom environmental lessons with real-world applications, leading to a disconnect between knowledge and action.</p>
+<div class="unesco-data">
+<h4>UNESCO Research Finding</h4>
+<p>Gamified learning increases knowledge retention by 70% compared to traditional teaching methods.</p>
+</div>
+</div>
+<div class="infographic">
+<h3>Learning Approaches Comparison</h3>
+<div class="comparison">
+<div class="comparison-item">
+<div class="comparison-icon textbook-icon">
+<i class="fas fa-book"></i>
+</div>
+<h4>Textbook Learning</h4>
+<p>Passive information absorption</p>
+<p>30% retention rate</p>
+<p>Limited practical application</p>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon interactive-icon">
+<i class="fas fa-gamepad"></i>
+</div>
+<h4>Interactive Learning</h4>
+<p>Active engagement</p>
+<p>70%+ retention rate</p>
+<p>Real-world application</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="section-title">
+<h2>Features</h2>
+<p>Engaging tools to make environmental education fun and impactful</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-badge">Popular</div>
+<div class="feature-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<h3>Gamified Lessons</h3>
+<p>Interactive modules on waste management, water conservation, climate change, and biodiversity. Complete challenges to earn points and unlock new levels.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-tasks"></i>
+</div>
+<h3>Real-World Eco-Quests</h3>
+<p>Participate in practical activities like tree planting, waste segregation drives, and community clean-ups. Track your contributions and see your real impact.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-coins"></i>
+</div>
+<h3>Eco-Points &amp; Rewards</h3>
+<p>Earn eco-points for completing activities and redeem them for rewards. Collect badges and certificates to showcase your environmental achievements.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-trophy"></i>
+</div>
+<h3>Leaderboards</h3>
+<p>Compete with friends and schools across India. Climb the leaderboards by completing eco-challenges and making a positive environmental impact.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-users"></i>
+</div>
+<h3>Community Engagement</h3>
+<p>Connect with like-minded eco-warriors, share your achievements, and collaborate on environmental projects in your local community.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<h3>Impact Tracking</h3>
+<p>Visualize your environmental impact with detailed analytics. See how your actions contribute to larger sustainability goals and SDGs.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="section-title">
+<h2>Impact</h2>
+<p>From awareness to action: Creating lasting environmental change</p>
+</div>
+<div class="impact-container">
+<div class="impact-journey">
+<div class="journey-line">
+<div class="journey-point"></div>
+<div class="journey-point"></div>
+<div class="journey-point"></div>
+<div class="journey-point"></div>
+</div>
+<div class="journey-labels">
+<div class="journey-label">
+<i class="fas fa-lightbulb"></i>
+<h4>Awareness</h4>
+<p>Learning environmental concepts</p>
+</div>
+<div class="journey-label">
+<i class="fas fa-brain"></i>
+<h4>Understanding</h4>
+<p>Connecting knowledge to real issues</p>
+</div>
+<div class="journey-label">
+<i class="fas fa-hands-helping"></i>
+<h4>Action</h4>
+<p>Implementing eco-friendly practices</p>
+</div>
+<div class="journey-label">
+<i class="fas fa-globe-asia"></i>
+<h4>Influence</h4>
+<p>Inspiring others to change</p>
+</div>
+</div>
+</div>
+<div class="impact-icons">
+<div class="impact-icon">
+<i class="fas fa-seedling"></i>
+<h4>Local Action</h4>
+<p>Students implement eco-friendly practices in their daily lives</p>
+</div>
+<div class="impact-icon">
+<i class="fas fa-book-open"></i>
+<h4>Experiential Learning</h4>
+<p>Hands-on activities that reinforce environmental concepts</p>
+</div>
+<div class="impact-icon">
+<i class="fas fa-medal"></i>
+<h4>Competitions</h4>
+<p>School and national level eco-challenges driving change</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="section-title">
+<h2>Stakeholders</h2>
+<p>Building a collaborative ecosystem for environmental education</p>
+</div>
+<div class="stakeholders-grid">
+<div class="stakeholder-card">
+<div class="stakeholder-icon">
+<i class="fas fa-user-graduate"></i>
+</div>
+<h3>Students</h3>
+<p>Gain recognition for environmental actions, develop practical skills, and build a foundation for sustainable living.</p>
+</div>
+<div class="stakeholder-card">
+<div class="stakeholder-icon">
+<i class="fas fa-chalkboard-teacher"></i>
+</div>
+<h3>Teachers</h3>
+<p>Access engaging teaching tools, track student progress, and fulfill NEP 2020 environmental education requirements.</p>
+</div>
+<div class="stakeholder-card">
+<div class="stakeholder-icon">
+<i class="fas fa-school"></i>
+</div>
+<h3>Schools</h3>
+<p>Enhance curriculum with interactive environmental education, improve student engagement, and showcase sustainability initiatives.</p>
+</div>
+<div class="stakeholder-card">
+<div class="stakeholder-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<h3>NGOs &amp; Government</h3>
+<p>Track measurable environmental impact, align with SDG goals, and support nationwide environmental education initiatives.</p>
+</div>
+</div>
+<div class="testimonials">
+<h3 style="text-align: center; margin-bottom: 30px;">What Our Users Say</h3>
+<div class="testimonials-container">
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img alt="Priya Sharma" class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/44.jpg"/>
+<div class="testimonial-info">
+<h4>Priya Sharma</h4>
+<p>Student, Delhi</p>
+</div>
+</div>
+<div class="testimonial-text">
+                            "EcoLearn has transformed how I see the environment. I've started recycling at home and even convinced my parents to install solar panels!"
+                        </div>
+<div class="testimonial-rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img alt="Rajesh Kumar" class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/32.jpg"/>
+<div class="testimonial-info">
+<h4>Rajesh Kumar</h4>
+<p>Teacher, Bangalore</p>
+</div>
+</div>
+<div class="testimonial-text">
+                            "My students are more engaged than ever with environmental topics. The gamified approach has made learning fun and impactful."
+                        </div>
+<div class="testimonial-rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="testimonial-header">
+<img alt="Anita Patel" class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/63.jpg"/>
+<div class="testimonial-info">
+<h4>Anita Patel</h4>
+<p>School Principal, Pune</p>
+</div>
+</div>
+<div class="testimonial-text">
+                            "EcoLearn has helped our school align with NEP 2020 guidelines while making environmental education enjoyable for students."
+                        </div>
+<div class="testimonial-rating">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="page-section">
+<div class="container">
+<div class="newsletter-section">
+<h2 class="newsletter-title">Stay Updated</h2>
+<p class="newsletter-subtitle">Subscribe to our newsletter for the latest environmental education resources and eco-challenges</p>
+<form class="newsletter-form">
+<input placeholder="Enter your email address" type="email"/>
+<button type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+<!-- Three.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script src="assets/js/index.js"></script></body>
+</html>

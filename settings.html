@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - EcoLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/settings.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li class="nav-protected hidden"><a href="games.html">Games</a></li>
+<li class="nav-protected hidden"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#"><i class="fas fa-question-circle"></i> Help &amp; Support</a>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<main class="main-content">
+<div class="container">
+<div class="page-header">
+<h1>Account Settings</h1>
+<p>Manage your account preferences and privacy settings</p>
+</div>
+<div class="settings-container">
+<div class="settings-section">
+<div class="section-header">
+<div class="section-icon">
+<i class="fas fa-user-cog"></i>
+</div>
+<h2 class="section-title">Account Settings</h2>
+</div>
+<p class="section-description">Update your account information and security settings</p>
+<form id="account-settings-form">
+<div class="form-group">
+<label for="account-email">Email Address</label>
+<input disabled="" id="account-email" placeholder="Enter your email" type="email"/>
+</div>
+<div class="form-group">
+<label for="account-phone">Phone Number</label>
+<input id="account-phone" placeholder="Enter your phone number" type="tel"/>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="save-account-btn" type="button">
+<i class="fas fa-save"></i> Save Changes
+                            </button>
+<button class="btn btn-secondary" id="change-password-btn" type="button">
+<i class="fas fa-key"></i> Change Password
+                            </button>
+</div>
+</form>
+</div>
+<div class="settings-section">
+<div class="section-header">
+<div class="section-icon">
+<i class="fas fa-bell"></i>
+</div>
+<h2 class="section-title">Notification Preferences</h2>
+</div>
+<p class="section-description">Choose which notifications you'd like to receive</p>
+<div class="toggle-container">
+<span class="toggle-label">Email Notifications</span>
+<label class="toggle-switch">
+<input checked="" id="email-notifications" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="toggle-container">
+<span class="toggle-label">Game Reminders</span>
+<label class="toggle-switch">
+<input checked="" id="game-reminders" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="toggle-container">
+<span class="toggle-label">Weekly Progress Report</span>
+<label class="toggle-switch">
+<input id="progress-report" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary" id="save-notifications-btn" type="button">
+<i class="fas fa-save"></i> Save Preferences
+                        </button>
+</div>
+</div>
+<div class="settings-section">
+<div class="section-header">
+<div class="section-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<h2 class="section-title">Danger Zone</h2>
+</div>
+<div class="delete-account">
+<h3>Delete Account</h3>
+<p>Once you delete your account, there is no going back. Please be certain.</p>
+<button class="btn btn-danger" id="delete-account-btn" type="button">
+<i class="fas fa-trash-alt"></i> Delete My Account
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="modal" id="password-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="modal-title">Change Password</h3>
+<div class="modal-close" id="password-modal-close">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="modal-body">
+<form id="password-form">
+<div class="form-group">
+<label for="current-password">Current Password</label>
+<input id="current-password" required="" type="password"/>
+</div>
+<div class="form-group">
+<label for="new-password">New Password</label>
+<input id="new-password" required="" type="password"/>
+</div>
+<div class="form-group">
+<label for="confirm-password">Confirm New Password</label>
+<input id="confirm-password" required="" type="password"/>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" id="confirm-password-btn" type="button">Change Password</button>
+<button class="btn btn-secondary" id="cancel-password-btn" type="button">Cancel</button>
+</div>
+</div>
+</div>
+<div class="modal" id="delete-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3 class="modal-title">Delete Account</h3>
+<div class="modal-close" id="delete-modal-close">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="modal-body">
+<p>Are you sure you want to delete your account? This action cannot be undone.</p>
+<div class="form-group">
+<label for="delete-confirmation">Please type "DELETE" to confirm</label>
+<input id="delete-confirmation" placeholder="Type DELETE to confirm" type="text"/>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-danger" id="confirm-delete-btn" type="button">Delete Account</button>
+<button class="btn btn-secondary" id="cancel-delete-btn" type="button">Cancel</button>
+</div>
+</div>
+</div>
+<div class="toast" id="toast">
+<i class="fas fa-check-circle"></i>
+<span id="toast-message">Success!</span>
+</div>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/settings.js"></script></body>
+</html>

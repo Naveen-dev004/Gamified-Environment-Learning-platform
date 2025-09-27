@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help &amp; Support - EcoLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/help.css" rel="stylesheet"/></head>
+<body>
+<!-- Navigation -->
+<nav>
+<div class="container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li class="nav-protected hidden"><a href="games.html">Games</a></li>
+<li class="nav-protected hidden"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#"><i class="fas fa-question-circle"></i> Help &amp; Support</a>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="main-content">
+<div class="container">
+<div class="page-header">
+<h1>Help &amp; Support</h1>
+<p>Find answers to common questions or get in touch with our support team</p>
+</div>
+<!-- Search Section -->
+<div class="search-section">
+<h2 class="section-title">How can we help you?</h2>
+<form class="search-form" id="search-form">
+<input class="search-input" id="search-input" placeholder="Search for help articles..." type="text"/>
+<button class="search-btn" type="submit">
+<i class="fas fa-search"></i>
+</button>
+</form>
+<div class="search-suggestions">
+<span class="suggestion-tag">Account Issues</span>
+<span class="suggestion-tag">Game Problems</span>
+<span class="suggestion-tag">Payment</span>
+<span class="suggestion-tag">Technical Support</span>
+<span class="suggestion-tag">School Registration</span>
+</div>
+</div>
+<!-- FAQ Section -->
+<div class="faq-section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-categories">
+<button class="category-btn active" data-category="all">All</button>
+<button class="category-btn" data-category="account">Account</button>
+<button class="category-btn" data-category="games">Games</button>
+<button class="category-btn" data-category="billing">Billing</button>
+<button class="category-btn" data-category="technical">Technical</button>
+</div>
+<div class="faq-container" id="faq-container">
+<!-- FAQ items will be dynamically loaded here -->
+</div>
+</div>
+<!-- Contact Section -->
+<div class="contact-section">
+<h2 class="section-title">Contact Us</h2>
+<div class="contact-options">
+<div class="contact-option">
+<div class="contact-icon">
+<i class="fas fa-comments"></i>
+</div>
+<h3 class="contact-title">Live Chat</h3>
+<p class="contact-description">Chat with our support team in real-time</p>
+<button class="contact-btn" id="live-chat-btn">Start Chat</button>
+</div>
+<div class="contact-option">
+<div class="contact-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<h3 class="contact-title">Email Support</h3>
+<p class="contact-description">Send us an email and we'll respond within 24 hours</p>
+<button class="contact-btn" id="email-support-btn">Send Email</button>
+</div>
+<div class="contact-option">
+<div class="contact-icon">
+<i class="fas fa-phone-alt"></i>
+</div>
+<h3 class="contact-title">Phone Support</h3>
+<p class="contact-description">Call us Monday to Friday, 9 AM to 6 PM</p>
+<button class="contact-btn" id="phone-support-btn">Call Now</button>
+</div>
+</div>
+<div class="contact-form-container">
+<h3 style="text-align: center; margin-bottom: 25px; color: var(--dark-gray);">Send us a Message</h3>
+<form id="contact-form">
+<div class="form-group">
+<label for="contact-name">Your Name</label>
+<input id="contact-name" placeholder="Enter your name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="contact-email">Email Address</label>
+<input id="contact-email" placeholder="Enter your email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="contact-subject">Subject</label>
+<select id="contact-subject" required="">
+<option value="">Select a subject</option>
+<option value="account">Account Issues</option>
+<option value="games">Game Problems</option>
+<option value="billing">Billing &amp; Payments</option>
+<option value="technical">Technical Support</option>
+<option value="feedback">Feedback</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label for="contact-message">Message</label>
+<textarea id="contact-message" placeholder="Describe your issue or question" required=""></textarea>
+</div>
+<div class="form-actions">
+<button class="btn btn-secondary" id="reset-form-btn" type="button">Reset</button>
+<button class="btn btn-primary" type="submit">Send Message</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Resources Section -->
+<div class="resources-section">
+<h2 class="section-title">Additional Resources</h2>
+<div class="resources-grid">
+<div class="resource-card">
+<div class="resource-icon">
+<i class="fas fa-book"></i>
+</div>
+<h3 class="resource-title">User Guide</h3>
+<p class="resource-description">Comprehensive guide to using EcoLearn platform</p>
+<a class="resource-link" href="#">Read More <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="resource-card">
+<div class="resource-icon">
+<i class="fas fa-chalkboard-teacher"></i>
+</div>
+<h3 class="resource-title">Teacher Resources</h3>
+<p class="resource-description">Materials for educators to integrate EcoLearn in classrooms</p>
+<a class="resource-link" href="#">Explore <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="resource-card">
+<div class="resource-icon">
+<i class="fas fa-video"></i>
+</div>
+<h3 class="resource-title">Video Tutorials</h3>
+<p class="resource-description">Step-by-step video guides for all features</p>
+<a class="resource-link" href="#">Watch <i class="fas fa-arrow-right"></i></a>
+</div>
+<div class="resource-card">
+<div class="resource-icon">
+<i class="fas fa-users"></i>
+</div>
+<h3 class="resource-title">Community Forum</h3>
+<p class="resource-description">Connect with other EcoLearn users and educators</p>
+<a class="resource-link" href="#">Join <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+<i class="fas fa-check-circle"></i>
+<span id="toast-message">Success!</span>
+</div>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2023 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/help.js"></script></body>
+</html>

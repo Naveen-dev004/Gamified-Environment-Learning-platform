@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoLearn - Learning Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/learning.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a class="active" href="learning.html">Learn</a></li>
+<!-- <li><a href="login.html">Login</a></li> -->
+<!-- <li><a href="signup.html">Sign Up</a></li> -->
+<li><a class="nav-protected hidden" href="community.html">community</a> </li>
+<li><a class="nav-protected hidden" href="DIY.html">DIY</a> </li>
+<li class="nav-protected hidden"><a href="games.html">Games</a></li>
+<li class="nav-protected hidden"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<div class="container">
+<div class="breadcrumb-nav">
+<a href="index.html"><i class="fas fa-home"></i> Home</a>
+<span>/</span>
+<span>Learning Hub</span>
+</div>
+</div>
+</div>
+<!-- Learning Hero Section -->
+<section class="learning-hero">
+<div class="container">
+<div class="learning-hero-content">
+<h1>Environmental Learning Hub</h1>
+<p>Explore interactive modules on key environmental topics and become an eco-warrior</p>
+</div>
+</div>
+</section>
+<!-- Learning Section -->
+<section class="learning-section">
+<div class="container">
+<div class="learning-grid">
+<div class="learning-card" data-module="environment">
+<div class="learning-card-header">
+<img alt="Environment" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"/>
+<div class="learning-card-overlay">
+<i class="fas fa-tree learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Environment &amp; Ecosystems</h3>
+<p>Learn about ecosystems, biodiversity, and the importance of preserving our natural environment.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>7 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('environment')">Start Learning</button>
+</div>
+</div>
+<div class="learning-card" data-module="climate">
+<div class="learning-card-header">
+<img alt="Climate Change" src="images/climate.jpg"/>
+<div class="learning-card-overlay">
+<i class="fas fa-temperature-high learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Climate Change</h3>
+<p>Understand the science behind climate change, its impacts, and how we can mitigate its effects.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>9 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('climate')">Start Learning</button>
+</div>
+</div>
+<div class="learning-card" data-module="nature">
+<div class="learning-card-header">
+<img alt="Nature Conservation" src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"/>
+<div class="learning-card-overlay">
+<i class="fas fa-paw learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Nature Conservation</h3>
+<p>Discover the importance of conserving natural habitats and protecting endangered species.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>6 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('nature')">Start Learning</button>
+</div>
+</div>
+<div class="learning-card" data-module="warming">
+<div class="learning-card-header">
+<img alt="Global Warming" src="images/global.jpg"/>
+<div class="learning-card-overlay">
+<i class="fas fa-globe-americas learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Global Warming</h3>
+<p>Explore the causes and consequences of global warming and learn about sustainable solutions.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>8 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('warming')">Start Learning</button>
+</div>
+</div>
+<div class="learning-card" data-module="sustainable">
+<div class="learning-card-header">
+<img alt="Sustainable Development" src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"/>
+<div class="learning-card-overlay">
+<i class="fas fa-seedling learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Sustainable Development</h3>
+<p>Learn about sustainable practices that meet the needs of the present without compromising the future.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>10 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('sustainable')">Start Learning</button>
+</div>
+</div>
+<div class="learning-card" data-module="disasters">
+<div class="learning-card-header">
+<img alt="Natural Disasters" src="images/huricane.jpg"/>
+<div class="learning-card-overlay">
+<i class="fas fa-house-damage learning-card-icon"></i>
+</div>
+</div>
+<div class="learning-card-body">
+<h3>Natural Disasters</h3>
+<p>Understand natural disasters, their causes, and how to prepare and respond to them.</p>
+<div class="learning-progress">
+<div class="learning-progress-bar" style="width: 0%"></div>
+</div>
+<div class="learning-stats">
+<span class="progress-text">0% Complete</span>
+<span>7 Lessons</span>
+</div>
+</div>
+<div class="learning-card-footer">
+<button class="btn btn-primary" onclick="openLearningModule('disasters')">Start Learning</button>
+</div>
+</div>
+</div>
+<!-- Learning Module Container -->
+<div id="learning-module-container" style="margin-top: 50px;">
+<!-- Environment Module -->
+<div class="learning-module" id="environment-module">
+<div class="learning-module-header">
+<i class="fas fa-tree learning-module-icon"></i>
+<h3>Environment &amp; Ecosystems</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('environment', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('environment', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('environment', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('environment', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="environment-overview">
+<p>The environment encompasses all living and non-living things occurring naturally on Earth. It is the foundation of life on our planet, providing the air we breathe, the water we drink, and the food we eat.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Ecosystems:</strong> Communities of living organisms interacting with their physical environment.</li>
+<li><strong>Biodiversity:</strong> The variety of life at all levels of biological organization.</li>
+<li><strong>Habitat:</strong> The natural environment where a species lives and grows.</li>
+<li><strong>Food Chains:</strong> Linear sequences of organisms through which nutrients and energy are transferred.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Healthy ecosystems provide essential services that support all life on Earth. They regulate climate, purify water, pollinate crops, and protect against natural disasters. Understanding how ecosystems function is the first step toward protecting them.</p>
+<h4>Types of Ecosystems</h4>
+<p>Ecosystems can be classified into two broad categories:</p>
+<ul>
+<li><strong>Terrestrial Ecosystems:</strong> Found on land, including forests, grasslands, deserts, and tundra. Each has unique climate conditions and supports different forms of life.</li>
+<li><strong>Aquatic Ecosystems:</strong> Found in water bodies, including freshwater ecosystems (rivers, lakes, ponds) and marine ecosystems (oceans, coral reefs, estuaries). These ecosystems are vital for regulating Earth's climate and supporting a vast array of biodiversity.</li>
+</ul>
+<h4>Human Impact on Ecosystems</h4>
+<p>Human activities have significantly altered ecosystems worldwide. Deforestation, pollution, urbanization, and climate change are major threats to ecosystem health. These changes can lead to loss of biodiversity, disruption of ecosystem services, and reduced resilience to environmental changes.</p>
+</div>
+<div class="learning-content" id="environment-lessons">
+<h4>Lesson 1: Introduction to Ecosystems</h4>
+<p>Ecosystems are complex networks of interactions between living organisms and their physical environment. They range in size from small ponds to entire oceans. In this lesson, you'll learn about the components of ecosystems and how energy flows through them.</p>
+<ul>
+<li>Abiotic components: Non-living parts of the environment (water, sunlight, soil, air)</li>
+<li>Biotic components: Living organisms (plants, animals, microorganisms)</li>
+<li>Energy flow: How energy moves from producers to consumers to decomposers</li>
+<li>Nutrient cycling: How nutrients are recycled within ecosystems</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-1" onclick="completeLesson('environment', 1)">Mark as Completed</button>
+<h4>Lesson 2: Biodiversity and Its Importance</h4>
+<p>Biodiversity refers to the variety of life at all levels, from genes to species to ecosystems. This lesson explores why biodiversity is crucial for ecosystem health and human well-being.</p>
+<ul>
+<li>Genetic diversity: Variation within species</li>
+<li>Species diversity: Variety of different species</li>
+<li>Ecosystem diversity: Variety of habitats and ecological processes</li>
+<li>Benefits of biodiversity: Ecosystem stability, resilience, and services</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-2" onclick="completeLesson('environment', 2)">Mark as Completed</button>
+<h4>Lesson 3: Terrestrial Ecosystems</h4>
+<p>Terrestrial ecosystems cover about 29% of Earth's surface. This lesson examines the major types of terrestrial ecosystems and their characteristics.</p>
+<ul>
+<li>Forests: Tropical, temperate, and boreal forests</li>
+<li>Grasslands: Prairies, savannas, and steppes</li>
+<li>Deserts: Hot and cold deserts and their adaptations</li>
+<li>Tundra: Arctic and alpine tundra ecosystems</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-3" onclick="completeLesson('environment', 3)">Mark as Completed</button>
+<h4>Lesson 4: Aquatic Ecosystems</h4>
+<p>Aquatic ecosystems cover over 70% of Earth's surface and contain most of the planet's water. This lesson explores freshwater and marine ecosystems.</p>
+<ul>
+<li>Freshwater ecosystems: Rivers, lakes, wetlands, and ponds</li>
+<li>Marine ecosystems: Oceans, coral reefs, estuaries, and deep-sea vents</li>
+<li>Adaptations of aquatic organisms</li>
+<li>Threats to aquatic ecosystems: Pollution, overfishing, climate change</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-4" onclick="completeLesson('environment', 4)">Mark as Completed</button>
+<h4>Lesson 5: Human Impact on Ecosystems</h4>
+<p>Human activities have transformed ecosystems worldwide. This lesson examines the major impacts of human actions on ecosystems and their consequences.</p>
+<ul>
+<li>Land use changes: Deforestation, urbanization, agriculture</li>
+<li>Pollution: Air, water, soil, and plastic pollution</li>
+<li>Climate change: Altering temperature and precipitation patterns</li>
+<li>Invasive species: Disrupting native ecosystems</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-5" onclick="completeLesson('environment', 5)">Mark as Completed</button>
+<h4>Lesson 6: Conservation Strategies</h4>
+<p>Conservation efforts aim to protect and restore ecosystems. This lesson explores different approaches to conservation.</p>
+<ul>
+<li>Protected areas: National parks, wildlife reserves, marine protected areas</li>
+<li>Restoration ecology: Rebuilding damaged ecosystems</li>
+<li>Sustainable resource management: Balancing use and conservation</li>
+<li>Community-based conservation: Involving local communities</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-6" onclick="completeLesson('environment', 6)">Mark as Completed</button>
+<h4>Lesson 7: Ecosystem Services</h4>
+<p>Ecosystems provide essential services that support human well-being. This lesson explores these services and their value.</p>
+<ul>
+<li>Provisioning services: Food, water, timber, fiber</li>
+<li>Regulating services: Climate regulation, water purification, pollination</li>
+<li>Cultural services: Recreation, aesthetic, spiritual values</li>
+<li>Supporting services: Nutrient cycling, soil formation</li>
+</ul>
+<button class="btn btn-secondary" id="environment-lesson-7" onclick="completeLesson('environment', 7)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="environment-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>Silent Spring by Rachel Carson - A classic work that launched the environmental movement</li>
+<li>The Sixth Extinction by Elizabeth Kolbert - Explores the current mass extinction event</li>
+<li>Nature's Services: Societal Dependence on Natural Ecosystems by Gretchen Daily - Examines ecosystem services</li>
+<li>The Diversity of Life by E.O. Wilson - A comprehensive look at biodiversity</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>Planet Earth (BBC) - A landmark series showcasing Earth's ecosystems</li>
+<li>Our Planet (Netflix) - Highlights the importance of conservation</li>
+<li>Chasing Coral - Documents the decline of coral reefs</li>
+<li>The Serengeti Rules - Explores how ecosystems regulate themselves</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>World Wildlife Fund (WWF) - Conservation organization with extensive resources</li>
+<li>The Nature Conservancy - Science-based conservation approaches</li>
+<li>National Geographic Environment - News and information about environmental issues</li>
+<li>United Nations Environment Programme - Global environmental data and reports</li>
+</ul>
+</div>
+<div class="learning-content" id="environment-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. Which of the following is NOT a component of an ecosystem?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 1)">A) Producers</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 1)">B) Consumers</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 1)">C) Decomposers</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'environment', 1)">D) Factories</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. What does biodiversity refer to?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 2)">A) The variety of weather patterns</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'environment', 2)">B) The variety of life at all levels</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 2)">C) The variety of ecosystems</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 2)">D) The variety of human activities</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. Which of the following is an example of a terrestrial ecosystem?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 3)">A) Coral reef</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'environment', 3)">B) Tropical rainforest</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 3)">C) Open ocean</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 3)">D) Estuary</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. Which human activity is most responsible for deforestation?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 4)">A) Tourism</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'environment', 4)">B) Agriculture</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 4)">C) Renewable energy</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 4)">D) Conservation</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. What is the primary benefit of biodiversity to ecosystems?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 5)">A) Increasing human population</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 5)">B) Providing economic resources</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'environment', 5)">C) Enhancing ecosystem stability and resilience</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'environment', 5)">D) Reducing pollution</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="environment-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="environment-quiz-score">0%</div>
+<div class="quiz-result-text" id="environment-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="environment-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('environment')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('environment')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Climate Change Module -->
+<div class="learning-module" id="climate-module">
+<div class="learning-module-header">
+<i class="fas fa-temperature-high learning-module-icon"></i>
+<h3>Climate Change</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('climate', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('climate', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('climate', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('climate', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="climate-overview">
+<p>Climate change refers to long-term shifts in temperatures and weather patterns. These shifts may be natural, but since the 1800s, human activities have been the main driver of climate change, primarily due to the burning of fossil fuels (like coal, oil, and gas), which produces heat-trapping gases.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Greenhouse Effect:</strong> The process by which radiation from a planet's atmosphere warms the planet's surface to a temperature above what it would be without this atmosphere.</li>
+<li><strong>Carbon Footprint:</strong> The total amount of greenhouse gases produced to directly and indirectly support human activities.</li>
+<li><strong>Global Warming:</strong> The long-term heating of Earth's climate system observed since the pre-industrial period.</li>
+<li><strong>Climate Mitigation:</strong> Efforts to reduce or prevent emission of greenhouse gases.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Climate change affects every country on every continent. It disrupts national economies and affects lives, costing people, communities, and countries dearly today and even more tomorrow. Weather patterns are changing, sea levels are rising, and weather events are becoming more extreme.</p>
+<h4>Scientific Evidence</h4>
+<p>The scientific consensus on climate change is overwhelming. Multiple lines of evidence confirm that Earth's climate is warming:</p>
+<ul>
+<li>Global temperature records show a clear warming trend since the late 19th century</li>
+<li>Ice cores reveal that current CO2 levels are unprecedented in at least 800,000 years</li>
+<li>Ocean acidification is occurring as oceans absorb excess CO2</li>
+<li>Sea levels are rising due to thermal expansion and melting ice</li>
+<li>Extreme weather events are becoming more frequent and intense</li>
+</ul>
+</div>
+<div class="learning-content" id="climate-lessons">
+<h4>Lesson 1: Understanding Climate Science</h4>
+<p>Climate science is the study of Earth's climate system and how it changes over time. This lesson introduces the basics of climate science and the difference between weather and climate.</p>
+<ul>
+<li>Weather vs. Climate: Short-term atmospheric conditions vs. long-term patterns</li>
+<li>Climate system components: Atmosphere, hydrosphere, cryosphere, lithosphere, biosphere</li>
+<li>Climate drivers: Natural factors (solar radiation, volcanoes) and human factors</li>
+<li>Climate modeling: How scientists project future climate changes</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-1" onclick="completeLesson('climate', 1)">Mark as Completed</button>
+<h4>Lesson 2: The Greenhouse Effect</h4>
+<p>The greenhouse effect is a natural process that warms Earth's surface. This lesson explains how it works and how human activities are intensifying it.</p>
+<ul>
+<li>Natural greenhouse effect: Essential for life on Earth</li>
+<li>Greenhouse gases: CO2, methane, nitrous oxide, water vapor</li>
+<li>Enhanced greenhouse effect: Human-caused intensification</li>
+<li>Global warming potential: Comparing the warming effects of different gases</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-2" onclick="completeLesson('climate', 2)">Mark as Completed</button>
+<h4>Lesson 3: Evidence of Climate Change</h4>
+<p>Scientists use multiple lines of evidence to document climate change. This lesson explores the key indicators of a changing climate.</p>
+<ul>
+<li>Temperature records: Global and regional trends</li>
+<li>Ice melt: Glaciers, ice sheets, and Arctic sea ice</li>
+<li>Sea level rise: Measurements and projections</li>
+<li>Ocean changes: Warming, acidification, and deoxygenation</li>
+<li>Extreme events: Heatwaves, droughts, floods, and storms</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-3" onclick="completeLesson('climate', 3)">Mark as Completed</button>
+<h4>Lesson 4: Human Impact on Climate</h4>
+<p>Human activities are the primary driver of recent climate change. This lesson examines how our actions contribute to the problem.</p>
+<ul>
+<li>Fossil fuel combustion: Energy production, transportation, industry</li>
+<li>Deforestation: Reducing carbon sinks</li>
+<li>Agriculture: Livestock emissions, rice cultivation, fertilizer use</li>
+<li>Industrial processes: Cement production, chemical manufacturing</li>
+<li>Waste management: Landfill emissions, wastewater</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-4" onclick="completeLesson('climate', 4)">Mark as Completed</button>
+<h4>Lesson 5: Climate Change Impacts</h4>
+<p>Climate change has wide-ranging impacts on natural systems and human societies. This lesson explores these effects.</p>
+<ul>
+<li>Ecosystem impacts: Species shifts, extinction risks, coral bleaching</li>
+<li>Water resources: Changing precipitation patterns, droughts, floods</li>
+<li>Agriculture and food security: Crop yields, food availability</li>
+<li>Human health: Heat stress, disease vectors, air quality</li>
+<li>Social and economic impacts: Displacement, inequality, conflicts</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-5" onclick="completeLesson('climate', 5)">Mark as Completed</button>
+<h4>Lesson 6: Climate Mitigation Strategies</h4>
+<p>Climate mitigation involves reducing greenhouse gas emissions and enhancing carbon sinks. This lesson explores solutions to address climate change.</p>
+<ul>
+<li>Renewable energy: Solar, wind, hydro, geothermal</li>
+<li>Energy efficiency: Buildings, appliances, transportation</li>
+<li>Carbon pricing: Carbon taxes, cap-and-trade systems</li>
+<li>Nature-based solutions: Reforestation, soil carbon sequestration</li>
+<li>Technological innovations: Carbon capture, green hydrogen</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-6" onclick="completeLesson('climate', 6)">Mark as Completed</button>
+<h4>Lesson 7: Climate Adaptation</h4>
+<p>Adaptation involves adjusting to current and expected climate change impacts. This lesson examines strategies to build resilience.</p>
+<ul>
+<li>Infrastructure adaptation: Flood defenses, resilient buildings</li>
+<li>Ecosystem-based adaptation: Wetland restoration, urban greening</li>
+<li>Agricultural adaptation: Drought-resistant crops, diversified farming</li>
+<li>Community adaptation: Early warning systems, disaster preparedness</li>
+<li>Policy and governance: National adaptation plans, international cooperation</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-7" onclick="completeLesson('climate', 7)">Mark as Completed</button>
+<h4>Lesson 8: Climate Policy and Agreements</h4>
+<p>International cooperation is essential to address climate change. This lesson explores global climate policy efforts.</p>
+<ul>
+<li>United Nations Framework Convention on Climate Change (UNFCCC)</li>
+<li>Kyoto Protocol: First international emissions reduction treaty</li>
+<li>Paris Agreement: Global framework for limiting warming</li>
+<li>Climate finance: Supporting developing nations in their efforts</li>
+<li>National climate commitments: NDCs and long-term strategies</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-8" onclick="completeLesson('climate', 8)">Mark as Completed</button>
+<h4>Lesson 9: Climate Justice</h4>
+<p>Climate change impacts are not distributed equally. This lesson explores the ethical dimensions of climate change and its disproportionate impacts.</p>
+<ul>
+<li>Equity and fairness: Historical responsibility vs. current vulnerability</li>
+<li>Climate justice movements: Advocating for marginalized communities</li>
+<li>Just transition: Ensuring equitable shift to low-carbon economy</li>
+<li>Indigenous knowledge: Traditional practices for climate resilience</li>
+<li>Intergenerational equity: Responsibilities to future generations</li>
+</ul>
+<button class="btn btn-secondary" id="climate-lesson-9" onclick="completeLesson('climate', 9)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="climate-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>This Changes Everything by Naomi Klein - Explores the economic and political aspects of climate change</li>
+<li>The Uninhabitable Earth by David Wallace-Wells - Examines worst-case climate scenarios</li>
+<li>Drawdown: The Most Comprehensive Plan Ever Proposed to Reverse Global Warming - Presents solutions</li>
+<li>Climate Change: The Science of Global Warming and Our Energy Future by Jason Smerdon - Scientific overview</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>An Inconvenient Truth (2006) - Brought climate change to public attention</li>
+<li>Before the Flood (2016) - Leonardo DiCaprio explores climate change impacts</li>
+<li>Climate Change: The Facts (2019) - BBC documentary featuring scientists</li>
+<li>2040 (2019) - Focuses on solutions to climate change</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>Intergovernmental Panel on Climate Change (IPCC) - Authoritative scientific reports</li>
+<li>National Aeronautics and Space Administration (NASA) Climate Change - Data and visualizations</li>
+<li>United Nations Framework Convention on Climate Change (UNFCCC) - International agreements</li>
+<li>Global Carbon Project - Tracks global carbon emissions</li>
+</ul>
+</div>
+<div class="learning-content" id="climate-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. Which gas is most responsible for the greenhouse effect?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 1)">A) Oxygen</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'climate', 1)">B) Carbon Dioxide</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 1)">C) Nitrogen</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 1)">D) Hydrogen</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. What is the primary cause of current climate change?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 2)">A) Natural climate cycles</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 2)">B) Solar radiation</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'climate', 2)">C) Human activities</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 2)">D) Volcanic eruptions</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. Which international agreement aims to limit global warming to well below 2°C?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 3)">A) Kyoto Protocol</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'climate', 3)">B) Paris Agreement</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 3)">C) Montreal Protocol</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 3)">D) Copenhagen Accord</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. What is the term for the increase in sea level due to thermal expansion of water?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 4)">A) Tidal rise</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 4)">B) Ocean surge</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'climate', 4)">C) Steric sea level rise</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 4)">D) Coastal inundation</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. Which of the following is a renewable energy source?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 5)">A) Coal</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 5)">B) Natural gas</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'climate', 5)">C) Solar power</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'climate', 5)">D) Nuclear power</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="climate-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="climate-quiz-score">0%</div>
+<div class="quiz-result-text" id="climate-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="climate-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('climate')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('climate')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Nature Conservation Module -->
+<div class="learning-module" id="nature-module">
+<div class="learning-module-header">
+<i class="fas fa-paw learning-module-icon"></i>
+<h3>Nature Conservation</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('nature', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('nature', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('nature', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('nature', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="nature-overview">
+<p>Nature conservation is the protection, preservation, management, or restoration of natural environments and the ecological communities that inhabit them. It is essential for maintaining biodiversity, ecosystem services, and the overall health of our planet.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Biodiversity Conservation:</strong> Efforts to protect the variety of life on Earth.</li>
+<li><strong>Habitat Protection:</strong> Preserving natural areas where species live and breed.</li>
+<li><strong>Endangered Species:</strong> Plants and animals at risk of extinction.</li>
+<li><strong>Protected Areas:</strong> Regions designated for the conservation of nature.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Conservation is crucial for maintaining ecosystem balance and ensuring the survival of species. It provides economic benefits through tourism and ecosystem services, and it helps preserve cultural heritage and traditional knowledge. Conservation efforts also contribute to climate change mitigation and adaptation.</p>
+<h4>Conservation Approaches</h4>
+<p>Conservation strategies can be categorized into two main approaches:</p>
+<ul>
+<li><strong>In-situ conservation:</strong> Protecting species in their natural habitats through protected areas, habitat restoration, and sustainable management practices.</li>
+<li><strong>Ex-situ conservation:</strong> Protecting species outside their natural habitats through botanical gardens, zoos, seed banks, and captive breeding programs.</li>
+</ul>
+</div>
+<div class="learning-content" id="nature-lessons">
+<h4>Lesson 1: Introduction to Conservation</h4>
+<p>Conservation biology is a multidisciplinary science that aims to protect species, their habitats, and ecosystems from extinction and erosion of biotic interactions. This lesson introduces the fundamental concepts of conservation.</p>
+<ul>
+<li>History of conservation: From early preservation efforts to modern conservation biology</li>
+<li>Conservation ethics: Intrinsic value vs. instrumental value of nature</li>
+<li>Conservation principles: Representation, persistence, resilience</li>
+<li>Conservation challenges: Balancing human needs with biodiversity protection</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-1" onclick="completeLesson('nature', 1)">Mark as Completed</button>
+<h4>Lesson 2: Biodiversity Loss</h4>
+<p>Earth is experiencing a biodiversity crisis with species extinction rates up to 1,000 times higher than natural background rates. This lesson explores the causes and consequences of biodiversity decline.</p>
+<ul>
+<li>Direct drivers: Habitat loss, overexploitation, invasive species, pollution, climate change</li>
+<li>Indirect drivers: Population growth, economic activity, technology, cultural factors</li>
+<li>Consequences: Ecosystem degradation, loss of ecosystem services, reduced resilience</li>
+<li>Tipping points: Thresholds beyond which ecosystems undergo irreversible changes</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-2" onclick="completeLesson('nature', 2)">Mark as Completed</button>
+<h4>Lesson 3: Endangered Species</h4>
+<p>Endangered species are those at risk of extinction. This lesson examines the factors that threaten species and efforts to protect them.</p>
+<ul>
+<li>IUCN Red List: Categories of threat and criteria for assessment</li>
+<li>Causes of endangerment: Habitat destruction, poaching, disease, climate change</li>
+<li>Flagship species: Charismatic species that garner conservation support</li>
+<li>Conservation strategies: Legal protection, habitat management, captive breeding</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-3" onclick="completeLesson('nature', 3)">Mark as Completed</button>
+<h4>Lesson 4: Habitat Destruction</h4>
+<p>Habitat destruction is the primary threat to biodiversity worldwide. This lesson explores the causes and consequences of habitat loss and fragmentation.</p>
+<ul>
+<li>Types of habitat loss: Deforestation, wetland drainage, urbanization</li>
+<li>Habitat fragmentation: Breaking habitats into smaller, isolated patches</li>
+<li>Edge effects: Changes in habitat conditions at fragment boundaries</li>
+<li>Conservation responses: Protected areas, corridors, restoration</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-4" onclick="completeLesson('nature', 4)">Mark as Completed</button>
+<h4>Lesson 5: Protected Areas</h4>
+<p>Protected areas are cornerstones of biodiversity conservation. This lesson examines different types of protected areas and their management.</p>
+<ul>
+<li>IUCN protected area categories: From strict nature reserves to managed landscapes</li>
+<li>Design principles: Representativeness, connectivity, adequacy</li>
+<li>Management challenges: Funding, enforcement, community involvement</li>
+<li>Effectiveness: Assessing conservation outcomes and improving management</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-5" onclick="completeLesson('nature', 5)">Mark as Completed</button>
+<h4>Lesson 6: Community-Based Conservation</h4>
+<p>Local communities are essential partners in conservation efforts. This lesson explores approaches that involve communities in protecting biodiversity.</p>
+<ul>
+<li>Community conservation: Benefits and challenges of local involvement</li>
+<li>Indigenous knowledge: Traditional practices for sustainable resource use</li>
+<li>Community-based natural resource management: Devolving decision-making power</li>
+<li>Conservation and development: Balancing conservation goals with local livelihoods</li>
+</ul>
+<button class="btn btn-secondary" id="nature-lesson-6" onclick="completeLesson('nature', 6)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="nature-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>The Future of Life by Edward O. Wilson - Explores the biodiversity crisis and conservation solutions</li>
+<li>Half-Earth: Our Planet's Fight for Life by Edward O. Wilson - Proposes a bold conservation vision</li>
+<li>The Sixth Extinction: An Unnatural History by Elizabeth Kolbert - Documents the current mass extinction</li>
+<li>Conservation: A Beginner's Guide by Paul Jepson and Robert Whittaker - Introduction to key concepts</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>Virunga (2014) - Highlights conservation challenges in a national park</li>
+<li>Racing Extinction (2015) - Exposes the hidden world of endangered species trade</li>
+<li>The Ivory Game (2016) - Investigates the ivory trade and elephant poaching</li>
+<li>Our Planet (2019) - Showcases global conservation efforts</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>International Union for Conservation of Nature (IUCN) - Global authority on conservation</li>
+<li>World Wildlife Fund (WWF) - Conservation organization with field programs</li>
+<li>The Nature Conservancy - Science-based conservation approaches</li>
+<li>Conservation International - Protecting nature for the benefit of humanity</li>
+</ul>
+</div>
+<div class="learning-content" id="nature-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. What is the primary cause of biodiversity loss worldwide?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'nature', 1)">A) Habitat destruction</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 1)">B) Climate change</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 1)">C) Pollution</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 1)">D) Overexploitation</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. Which organization maintains the Red List of Threatened Species?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 2)">A) United Nations Environment Programme</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 2)">B) World Wildlife Fund</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'nature', 2)">C) International Union for Conservation of Nature</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 2)">D) The Nature Conservancy</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. What is the term for protecting species in their natural habitats?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'nature', 3)">A) In-situ conservation</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 3)">B) Ex-situ conservation</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 3)">C) Captive breeding</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 3)">D) Genetic preservation</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. Which of the following is NOT a category of protected area under IUCN?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 4)">A) Strict Nature Reserve</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 4)">B) National Park</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 4)">C) Wildlife Sanctuary</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'nature', 4)">D) Commercial Zone</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. What is the main goal of community-based conservation?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 5)">A) Establishing strict protected areas</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 5)">B) Captive breeding of endangered species</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'nature', 5)">C) Involving local communities in conservation efforts</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'nature', 5)">D) Creating zoos and botanical gardens</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="nature-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="nature-quiz-score">0%</div>
+<div class="quiz-result-text" id="nature-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="nature-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('nature')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('nature')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Warming Module -->
+<div class="learning-module" id="warming-module">
+<div class="learning-module-header">
+<i class="fas fa-globe-americas learning-module-icon"></i>
+<h3>Global Warming</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('warming', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('warming', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('warming', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('warming', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="warming-overview">
+<p>Global warming refers to the long-term rise in the average temperature of the Earth's climate system. It is a major aspect of climate change and has been demonstrated by direct temperature measurements and by measurements of various effects of the warming.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Global Temperature Rise:</strong> The increase in Earth's average surface temperature.</li>
+<li><strong>Fossil Fuels:</strong> Coal, oil, and natural gas formed from the remains of ancient plants and animals.</li>
+<li><strong>Carbon Emissions:</strong> The release of carbon dioxide into the atmosphere.</li>
+<li><strong>Renewable Energy:</strong> Energy from sources that are naturally replenishing.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Global warming has far-reaching consequences for the planet and its inhabitants. It leads to rising sea levels, more extreme weather events, shifts in wildlife populations and habitats, and impacts on agriculture and food security. Addressing global warming is one of the most pressing challenges of our time.</p>
+<h4>Historical Context</h4>
+<p>While Earth's climate has changed throughout its history, the current warming trend is particularly significant because it is largely the result of human activity since the mid-20th century. The rate of warming over the past century is unprecedented in the context of the past 2,000 years.</p>
+</div>
+<div class="learning-content" id="warming-lessons">
+<h4>Lesson 1: The Science of Global Warming</h4>
+<p>Global warming is driven by the enhanced greenhouse effect, which traps more heat in Earth's atmosphere. This lesson explores the scientific principles behind global warming.</p>
+<ul>
+<li>Greenhouse gases: CO2, methane, nitrous oxide, and fluorinated gases</li>
+<li>Carbon cycle: How carbon moves between atmosphere, oceans, land, and living things</li>
+<li>Global energy balance: Incoming solar radiation vs. outgoing heat</li>
+<li>Climate sensitivity: How much warming occurs with doubled CO2</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-1" onclick="completeLesson('warming', 1)">Mark as Completed</button>
+<h4>Lesson 2: Historical Temperature Data</h4>
+<p>Scientists use various methods to reconstruct past temperatures and measure current changes. This lesson explores how we know Earth is warming.</p>
+<ul>
+<li>Instrumental records: Thermometers and weather stations since the 19th century</li>
+<li>Proxy data: Tree rings, ice cores, corals, and sediment layers</li>
+<li>Temperature reconstructions: Building a picture of past climates</li>
+<li>Regional variations: How warming differs across the globe</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-2" onclick="completeLesson('warming', 2)">Mark as Completed</button>
+<h4>Lesson 3: Causes of Global Warming</h4>
+<p>Human activities are the primary driver of recent global warming. This lesson examines the sources of greenhouse gas emissions.</p>
+<ul>
+<li>Fossil fuel combustion: Electricity generation, transportation, industry</li>
+<li>Land use changes: Deforestation and agriculture</li>
+<li>Industrial processes: Cement production and chemical manufacturing</li>
+<li>Waste management: Landfills and wastewater treatment</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-3" onclick="completeLesson('warming', 3)">Mark as Completed</button>
+<h4>Lesson 4: The Carbon Cycle</h4>
+<p>Carbon is the foundation of life on Earth and a key element in global warming. This lesson explores how carbon moves through Earth's systems.</p>
+<ul>
+<li>Carbon reservoirs: Atmosphere, oceans, land, fossil fuels</li>
+<li>Carbon fluxes: Natural and human-induced exchanges between reservoirs</li>
+<li>Carbon sinks: Forests, oceans, and soils that absorb carbon</li>
+<li>Carbon feedback loops: How warming affects carbon storage and release</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-4" onclick="completeLesson('warming', 4)">Mark as Completed</button>
+<h4>Lesson 5: Impacts on Weather Patterns</h4>
+<p>Global warming is changing weather patterns around the world. This lesson explores the links between warming and extreme weather.</p>
+<ul>
+<li>Heatwaves: Increasing frequency, intensity, and duration</li>
+<li>Precipitation changes: More intense rainfall and droughts</li>
+<li>Tropical cyclones: Potential increases in intensity</li>
+<li>Jet stream changes: Influencing weather patterns and extremes</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-5" onclick="completeLesson('warming', 5)">Mark as Completed</button>
+<h4>Lesson 6: Melting Ice and Rising Seas</h4>
+<p>One of the most visible impacts of global warming is the melting of ice and rising sea levels. This lesson examines these changes and their consequences.</p>
+<ul>
+<li>Glacier retreat: Mountain glaciers shrinking worldwide</li>
+<li>Ice sheet loss: Greenland and Antarctica losing mass</li>
+<li>Arctic sea ice: Declining extent and thickness</li>
+<li>Sea level rise: Current trends and future projections</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-6" onclick="completeLesson('warming', 6)">Mark as Completed</button>
+<h4>Lesson 7: Ocean Acidification</h4>
+<p>Oceans are absorbing about a quarter of human-caused CO2 emissions, leading to acidification. This lesson explores this often-overlooked impact of global warming.</p>
+<ul>
+<li>Chemistry of ocean acidification: How CO2 lowers ocean pH</li>
+<li>Biological impacts: Effects on shell-forming organisms and coral reefs</li>
+<li>Ecosystem consequences: Potential disruptions to marine food webs</li>
+<li>Adaptation and resilience: How marine life might respond</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-7" onclick="completeLesson('warming', 7)">Mark as Completed</button>
+<h4>Lesson 8: Solutions to Global Warming</h4>
+<p>Addressing global warming requires concerted efforts at multiple levels. This lesson explores potential solutions to mitigate and adapt to warming.</p>
+<ul>
+<li>Mitigation strategies: Reducing greenhouse gas emissions</li>
+<li>Renewable energy transition: Solar, wind, hydro, and other clean sources</li>
+<li>Carbon removal: Technologies and natural approaches to remove CO2</li>
+<li>Adaptation measures: Preparing for unavoidable impacts</li>
+</ul>
+<button class="btn btn-secondary" id="warming-lesson-8" onclick="completeLesson('warming', 8)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="warming-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>The Weather Makers by Tim Flannery - Explores how humans are changing the climate</li>
+<li>Field Notes from a Catastrophe by Elizabeth Kolbert - Documents evidence of climate change</li>
+<li>Eaarth: Making a Life on a Tough New Planet by Bill McKibben - Envisions a changed world</li>
+<li>The Hockey Stick and the Climate Wars by Michael E. Mann - Chronicles the science debate</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>An Inconvenient Truth (2006) - Brought global warming to public attention</li>
+<li>Before the Flood (2016) - Leonardo DiCaprio explores climate impacts</li>
+<li>Years of Living Dangerously (2014) - Documentary series on climate change</li>
+<li>Chasing Coral (2017) - Documents coral bleaching due to warming oceans</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>NASA Global Climate Change - Vital signs of the planet</li>
+<li>National Oceanic and Atmospheric Administration (NOAA) Climate - Climate monitoring and data</li>
+<li>Intergovernmental Panel on Climate Change (IPCC) - Assessment reports</li>
+<li>Global Carbon Project - Global carbon budget information</li>
+</ul>
+</div>
+<div class="learning-content" id="warming-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. Which of the following is a major contributor to global warming?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 1)">A) Solar energy</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'warming', 1)">B) Burning fossil fuels</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 1)">C) Wind power</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 1)">D) Hydroelectric power</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. What is the primary greenhouse gas emitted by human activities?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'warming', 2)">A) Carbon dioxide</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 2)">B) Methane</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 2)">C) Nitrous oxide</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 2)">D) Fluorinated gases</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. Which of the following is a consequence of ocean acidification?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 3)">A) Increased ocean temperatures</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 3)">B) Rising sea levels</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'warming', 3)">C) Difficulty for shell-forming organisms</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 3)">D) Changes in ocean currents</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. What is the term for the process by which ice and snow reflect sunlight back into space?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 4)">A) Heat absorption</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 4)">B) Thermal radiation</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'warming', 4)">C) Albedo effect</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 4)">D) Greenhouse effect</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. Which of the following is a renewable energy source that can help reduce global warming?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'warming', 5)">A) Solar power</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 5)">B) Coal</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 5)">C) Natural gas</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'warming', 5)">D) Oil</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="warming-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="warming-quiz-score">0%</div>
+<div class="quiz-result-text" id="warming-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="warming-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('warming')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('warming')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sustainable Development Module -->
+<div class="learning-module" id="sustainable-module">
+<div class="learning-module-header">
+<i class="fas fa-seedling learning-module-icon"></i>
+<h3>Sustainable Development</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('sustainable', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('sustainable', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('sustainable', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('sustainable', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="sustainable-overview">
+<p>Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs. It is the organizing principle for meeting human development goals while simultaneously sustaining the ability of natural systems to provide the natural resources and ecosystem services upon which the economy and society depend.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Sustainable Development Goals (SDGs):</strong> A collection of 17 global goals set by the United Nations.</li>
+<li><strong>Triple Bottom Line:</strong> A framework that considers social, environmental, and financial performance.</li>
+<li><strong>Circular Economy:</strong> An economic system aimed at eliminating waste and the continual use of resources.</li>
+<li><strong>Renewable Resources:</strong> Resources that can be replenished naturally in a short period of time.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Sustainable development is essential for addressing global challenges like climate change, poverty, inequality, and environmental degradation. It provides a framework for balancing economic growth with environmental protection and social inclusion, ensuring a better quality of life for all people, now and in the future.</p>
+<h4>Three Pillars of Sustainability</h4>
+<p>Sustainable development is often conceptualized as having three interconnected pillars:</p>
+<ul>
+<li><strong>Environmental Sustainability:</strong> Protecting natural resources and ecosystems for current and future generations.</li>
+<li><strong>Social Sustainability:</strong> Ensuring equitable access to resources, health, education, and services for all people.</li>
+<li><strong>Economic Sustainability:</strong> Creating economic systems that can produce goods and services on an ongoing basis while avoiding sectoral imbalances.</li>
+</ul>
+</div>
+<div class="learning-content" id="sustainable-lessons">
+<h4>Lesson 1: Introduction to Sustainable Development</h4>
+<p>Sustainable development emerged as a concept in the late 20th century as a response to growing environmental and social challenges. This lesson introduces the definition, history, and principles of sustainable development.</p>
+<ul>
+<li>Historical context: From the Club of Rome to the Brundtland Report</li>
+<li>Core principles: Integration, equity, precaution, participation</li>
+<li>Measuring sustainability: Indicators and metrics</li>
+<li>Challenges and criticisms: Implementation gaps and competing priorities</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-1" onclick="completeLesson('sustainable', 1)">Mark as Completed</button>
+<h4>Lesson 2: The Three Pillars of Sustainability</h4>
+<p>Sustainability is often conceptualized as having three interconnected dimensions. This lesson explores the environmental, social, and economic aspects of sustainability.</p>
+<ul>
+<li>Environmental sustainability: Ecosystem protection, resource management, pollution control</li>
+<li>Social sustainability: Equity, justice, health, education, community</li>
+<li>Economic sustainability: Efficiency, stability, innovation, long-term growth</li>
+<li>Interconnections: How the pillars support and depend on each other</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-2" onclick="completeLesson('sustainable', 2)">Mark as Completed</button>
+<h4>Lesson 3: Sustainable Development Goals</h4>
+<p>The 17 Sustainable Development Goals (SDGs) are a universal call to action to end poverty, protect the planet, and ensure prosperity for all. This lesson explores the goals and their implementation.</p>
+<ul>
+<li>History and development: From Millennium Development Goals to SDGs</li>
+<li>The 17 goals: No poverty, zero hunger, health, education, gender equality, etc.</li>
+<li>Implementation mechanisms: National action plans, partnerships</li>
+<li>Monitoring and reporting: Indicators and voluntary national reviews</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-3" onclick="completeLesson('sustainable', 3)">Mark as Completed</button>
+<h4>Lesson 4: Sustainable Cities and Communities</h4>
+<p>More than half of the world's population lives in urban areas, and this is projected to increase. This lesson explores how cities can be developed sustainably.</p>
+<ul>
+<li>Urban challenges: Housing, transportation, pollution, inequality</li>
+<li>Sustainable urban planning: Compact cities, mixed-use development</li>
+<li>Green infrastructure: Parks, green roofs, urban forests</li>
+<li>Smart cities: Technology for resource efficiency and quality of life</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-4" onclick="completeLesson('sustainable', 4)">Mark as Completed</button>
+<h4>Lesson 5: Sustainable Agriculture</h4>
+<p>Agriculture is essential for human survival but has significant environmental impacts. This lesson explores farming practices that protect the environment and support communities.</p>
+<ul>
+<li>Conventional agriculture challenges: Soil degradation, water use, emissions</li>
+<li>Sustainable practices: Organic farming, agroecology, permaculture</li>
+<li>Soil health: Conservation tillage, cover crops, crop rotation</li>
+<li>Food systems: Local food, fair trade, reducing food waste</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-5" onclick="completeLesson('sustainable', 5)">Mark as Completed</button>
+<h4>Lesson 6: Renewable Energy</h4>
+<p>Transitioning from fossil fuels to renewable energy is essential for sustainable development. This lesson explores clean energy sources and their role in sustainability.</p>
+<ul>
+<li>Types of renewable energy: Solar, wind, hydro, geothermal, biomass</li>
+<li>Benefits: Reduced emissions, energy security, job creation</li>
+<li>Challenges: Intermittency, storage, grid integration</li>
+<li>Energy access: Expanding clean energy to developing regions</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-6" onclick="completeLesson('sustainable', 6)">Mark as Completed</button>
+<h4>Lesson 7: Circular Economy</h4>
+<p>The circular economy aims to eliminate waste and continually use resources. This lesson explores this alternative to the traditional linear economy.</p>
+<ul>
+<li>Linear vs. circular: Take-make-waste vs. reduce-reuse-recycle</li>
+<li>Principles: Design out waste, keep materials in use, regenerate natural systems</li>
+<li>Business models: Product-as-service, sharing platforms, product life extension</li>
+<li>Implementation: Policies, innovation, consumer behavior</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-7" onclick="completeLesson('sustainable', 7)">Mark as Completed</button>
+<h4>Lesson 8: Sustainable Consumption</h4>
+<p>Consumption patterns in developed and developing countries have significant environmental impacts. This lesson explores how consumer choices can support sustainability.</p>
+<ul>
+<li>Ecological footprint: Measuring human impact on Earth's resources</li>
+<li>Sustainable consumption: Reducing waste, choosing eco-friendly products</li>
+<li>Sharing economy: Access over ownership, collaborative consumption</li>
+<li>Consumer behavior: Barriers and drivers of sustainable choices</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-8" onclick="completeLesson('sustainable', 8)">Mark as Completed</button>
+<h4>Lesson 9: Corporate Sustainability</h4>
+<p>Businesses play a crucial role in advancing sustainable development. This lesson explores how companies can adopt sustainable practices.</p>
+<ul>
+<li>Business case for sustainability: Risk management, innovation, reputation</li>
+<li>Corporate social responsibility: Beyond compliance to positive impact</li>
+<li>ESG investing: Environmental, social, and governance criteria</li>
+<li>Sustainable business models: Creating shared value, circular business</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-9" onclick="completeLesson('sustainable', 9)">Mark as Completed</button>
+<h4>Lesson 10: Education for Sustainable Development</h4>
+<p>Education is essential for achieving sustainable development. This lesson explores the role of education in promoting sustainability.</p>
+<ul>
+<li>ESD principles: Transformative learning, critical thinking, systems thinking</li>
+<li>Approaches: Interdisciplinary, participatory, action-oriented</li>
+<li>Implementation: Curriculum integration, teacher training, whole-institution approaches</li>
+<li>Impact: Empowering learners to take informed decisions and actions</li>
+</ul>
+<button class="btn btn-secondary" id="sustainable-lesson-10" onclick="completeLesson('sustainable', 10)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="sustainable-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>The Sustainable Development Goals Report by United Nations - Annual progress reports</li>
+<li>Cradle to Cradle: Remaking the Way We Make Things by William McDonough - Design for sustainability</li>
+<li>Drawdown: The Most Comprehensive Plan Ever Proposed to Reverse Global Warming - Climate solutions</li>
+<li>The Economics of Climate Change by Nicholas Stern - Economic case for action</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>Tomorrow (2015) - Explores solutions to environmental and social challenges</li>
+<li>The True Cost (2015) - Examines the impact of fast fashion</li>
+<li>Minimalism: A Documentary About the Important Things (2015) - Explores sustainable living</li>
+<li>2040 (2019) - Focuses on solutions to climate change</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>United Nations Sustainable Development - Official SDG information</li>
+<li>World Business Council for Sustainable Development - Business solutions</li>
+<li>Sustainable Development Solutions Network - Networks of experts</li>
+<li>Ellen MacArthur Foundation - Circular economy resources</li>
+</ul>
+</div>
+<div class="learning-content" id="sustainable-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. How many Sustainable Development Goals (SDGs) were adopted by the United Nations?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 1)">A) 10</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 1)">B) 12</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'sustainable', 1)">C) 17</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 1)">D) 20</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. Which of the following is NOT one of the three pillars of sustainability?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 2)">A) Environmental</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 2)">B) Social</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'sustainable', 2)">C) Technological</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 2)">D) Economic</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. What is the primary goal of a circular economy?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 3)">A) To maximize economic growth</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 3)">B) To increase consumption</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'sustainable', 3)">C) To eliminate waste and continually use resources</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 3)">D) To reduce production costs</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. Which of the following is a renewable energy source?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 4)">A) Coal</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 4)">B) Natural gas</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'sustainable', 4)">C) Wind power</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 4)">D) Nuclear power</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. What is the term for reducing consumption and waste by repairing, sharing, and reusing items?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 5)">A) Recycling</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 5)">B) Composting</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'sustainable', 5)">C) Precycling</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'sustainable', 5)">D) Upcycling</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="sustainable-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="sustainable-quiz-score">0%</div>
+<div class="quiz-result-text" id="sustainable-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="sustainable-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('sustainable')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('sustainable')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Natural Disasters Module -->
+<div class="learning-module" id="disasters-module">
+<div class="learning-module-header">
+<i class="fas fa-house-damage learning-module-icon"></i>
+<h3>Natural Disasters</h3>
+</div>
+<div class="learning-tabs">
+<div class="learning-tab active" onclick="showLearningTab('disasters', 'overview')">Overview</div>
+<div class="learning-tab" onclick="showLearningTab('disasters', 'lessons')">Lessons</div>
+<div class="learning-tab" onclick="showLearningTab('disasters', 'resources')">Resources</div>
+<div class="learning-tab" onclick="showLearningTab('disasters', 'quiz')">Quiz</div>
+</div>
+<div class="learning-content active" id="disasters-overview">
+<p>Natural disasters are catastrophic events with atmospheric, geological, and hydrological origins. They include earthquakes, volcanic eruptions, landslides, tsunamis, floods, droughts, hurricanes, tornadoes, wildfires, and epidemics. These events can cause significant damage, loss of life, and disruption to communities.</p>
+<h4>Key Concepts</h4>
+<ul>
+<li><strong>Hazard:</strong> A natural phenomenon that has the potential to cause harm.</li>
+<li><strong>Vulnerability:</strong> The characteristics and circumstances of a community that make it susceptible to the damaging effects of a hazard.</li>
+<li><strong>Risk:</strong> The combination of the probability of an event and its negative consequences.</li>
+<li><strong>Disaster Risk Reduction:</strong> The concept and practice of reducing disaster risks through systematic efforts.</li>
+</ul>
+<h4>Why It Matters</h4>
+<p>Understanding natural disasters is crucial for preparedness, response, and recovery. Climate change is increasing the frequency and intensity of many natural disasters, making disaster risk reduction an essential component of sustainable development. Education about natural disasters can save lives and reduce damage to communities.</p>
+<h4>Types of Natural Disasters</h4>
+<p>Natural disasters can be categorized based on their origin:</p>
+<ul>
+<li><strong>Geological disasters:</strong> Earthquakes, volcanic eruptions, landslides, avalanches</li>
+<li><strong>Hydrological disasters:</strong> Floods, tsunamis, storm surges, droughts</li>
+<li><strong>Meteorological disasters:</strong> Hurricanes, cyclones, tornadoes, blizzards, heatwaves</li>
+<li><strong>Biological disasters:</strong> Pandemics, epidemics, insect infestations</li>
+</ul>
+</div>
+<div class="learning-content" id="disasters-lessons">
+<h4>Lesson 1: Introduction to Natural Disasters</h4>
+<p>Natural disasters are extreme events that result from natural processes of the Earth. This lesson introduces different types of disasters and their characteristics.</p>
+<ul>
+<li>Definition and classification: Natural vs. human-made disasters</li>
+<li>Disaster cycle: Mitigation, preparedness, response, recovery</li>
+<li>Global distribution: Where different disasters are most likely to occur</li>
+<li>Trends and patterns: How disaster frequency and severity are changing</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-1" onclick="completeLesson('disasters', 1)">Mark as Completed</button>
+<h4>Lesson 2: Geological Disasters</h4>
+<p>Geological disasters result from processes within the Earth's crust. This lesson explores earthquakes, volcanic eruptions, and landslides.</p>
+<ul>
+<li>Earthquakes: Causes, measurement, effects, and distribution</li>
+<li>Volcanic eruptions: Types, hazards, and global impacts</li>
+<li>Landslides and avalanches: Triggers, types, and risk factors</li>
+<li>Monitoring and early warning: Technologies and systems</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-2" onclick="completeLesson('disasters', 2)">Mark as Completed</button>
+<h4>Lesson 3: Hydrological Disasters</h4>
+<p>Hydrological disasters involve water in its various forms. This lesson examines floods, tsunamis, and droughts.</p>
+<ul>
+<li>Floods: Riverine, coastal, and flash floods; causes and impacts</li>
+<li>Tsunamis: Generation, propagation, and coastal impacts</li>
+<li>Droughts: Types, causes, and wide-ranging effects</li>
+<li>Water management: Flood control, drought mitigation, and early warning</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-3" onclick="completeLesson('disasters', 3)">Mark as Completed</button>
+<h4>Lesson 4: Meteorological Disasters</h4>
+<p>Meteorological disasters are driven by weather and atmospheric conditions. This lesson explores hurricanes, tornadoes, and other weather-related disasters.</p>
+<ul>
+<li>Tropical cyclones: Hurricanes, typhoons, and cyclones; formation and impacts</li>
+<li>Tornadoes: Formation, classification, and damage patterns</li>
+<li>Severe storms: Thunderstorms, blizzards, and ice storms</li>
+<li>Extreme temperatures: Heatwaves and cold waves</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-4" onclick="completeLesson('disasters', 4)">Mark as Completed</button>
+<h4>Lesson 5: Wildfires</h4>
+<p>Wildfires are uncontrolled fires in natural areas. This lesson explores their causes, behavior, and impacts.</p>
+<ul>
+<li>Fire ecology: The role of fire in natural ecosystems</li>
+<li>Causes and types: Natural vs. human-caused; surface, crown, and ground fires</li>
+<li>Fire behavior: Factors influencing spread and intensity</li>
+<li>Fire management: Prevention, suppression, and controlled burns</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-5" onclick="completeLesson('disasters', 5)">Mark as Completed</button>
+<h4>Lesson 6: Climate Change and Disasters</h4>
+<p>Climate change is influencing the frequency and intensity of many natural disasters. This lesson explores these connections.</p>
+<ul>
+<li>Warming climate: Increasing heatwaves and droughts</li>
+<li>Changing precipitation patterns: More intense rainfall and flooding</li>
+<li>Sea level rise: Exacerbating coastal flooding and erosion</li>
+<li>Compound events: Multiple hazards occurring simultaneously</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-6" onclick="completeLesson('disasters', 6)">Mark as Completed</button>
+<h4>Lesson 7: Disaster Preparedness</h4>
+<p>Preparedness is crucial for reducing the impacts of disasters. This lesson explores how individuals and communities can prepare for disasters.</p>
+<ul>
+<li>Personal preparedness: Emergency kits, family plans, evacuation routes</li>
+<li>Community preparedness: Early warning systems, evacuation plans, shelters</li>
+<li>Building resilience: Infrastructure, land-use planning, building codes</li>
+<li>Education and awareness: Training, drills, and public information</li>
+</ul>
+<button class="btn btn-secondary" id="disasters-lesson-7" onclick="completeLesson('disasters', 7)">Mark as Completed</button>
+</div>
+<div class="learning-content" id="disasters-resources">
+<h4>Recommended Reading</h4>
+<ul>
+<li>The Big Ones: How Natural Disasters Have Shaped Us by Lucy Jones - Explores major disasters</li>
+<li>Acts of God: The Unnatural History of Natural Disaster in America by Ted Steinberg - Examines human factors</li>
+<li>The Great Quake: How the Biggest Earthquake in North America Changed Our Understanding of the Planet by Henry Fountain - Focuses on Alaska earthquake</li>
+<li>The Wave: In Pursuit of the Rogues, Freaks, and Giants of the Ocean by Susan Casey - Explores giant waves</li>
+</ul>
+<h4>Documentaries</h4>
+<ul>
+<li>Forces of Nature (National Geographic) - Explores natural disasters</li>
+<li>Tsunami: Caught on Camera - Documents the 2004 Indian Ocean tsunami</li>
+<li>When the Earth Quakes - Examines earthquake science and preparedness</li>
+<li>Fire Chasers - Follows wildfire fighters in the American West</li>
+</ul>
+<h4>Online Resources</h4>
+<ul>
+<li>National Oceanic and Atmospheric Administration (NOAA) - Weather and climate information</li>
+<li>United Nations Office for Disaster Risk Reduction (UNDRR) - Global disaster risk reduction</li>
+<li>Federal Emergency Management Agency (FEMA) - Disaster preparedness and response</li>
+<li>Global Facility for Disaster Reduction and Recovery (GFDRR) - Disaster risk management</li>
+</ul>
+</div>
+<div class="learning-content" id="disasters-quiz">
+<div class="learning-quiz">
+<div class="quiz-question">1. Which of the following is NOT a natural disaster?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 1)">A) Earthquake</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 1)">B) Hurricane</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'disasters', 1)">C) Nuclear Accident</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 1)">D) Wildfire</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-1"></div>
+<div class="quiz-question">2. What is the term for the process of reducing the impact of disasters through proactive measures?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 2)">A) Disaster response</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 2)">B) Disaster recovery</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'disasters', 2)">C) Disaster mitigation</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 2)">D) Disaster relief</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-2"></div>
+<div class="quiz-question">3. Which scale is used to measure the magnitude of earthquakes?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 3)">A) Beaufort scale</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 3)">B) Saffir-Simpson scale</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'disasters', 3)">C) Richter scale</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 3)">D) Fujita scale</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-3"></div>
+<div class="quiz-question">4. What is the primary cause of tsunamis?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 4)">A) Strong winds</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 4)">B) Heavy rainfall</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 4)">C) High tides</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'disasters', 4)">D) Underwater earthquakes</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-4"></div>
+<div class="quiz-question">5. Which of the following is an essential item in a disaster preparedness kit?</div>
+<div class="quiz-options">
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 5)">A) Television</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 5)">B) Video games</div>
+<div class="quiz-option" onclick="selectQuizOption(this, true, 'disasters', 5)">C) Clean water</div>
+<div class="quiz-option" onclick="selectQuizOption(this, false, 'disasters', 5)">D) Microwave oven</div>
+</div>
+<div class="quiz-feedback" id="quiz-feedback-5"></div>
+<div class="quiz-result" id="disasters-quiz-result">
+<h3>Quiz Result</h3>
+<div class="quiz-result-score" id="disasters-quiz-score">0%</div>
+<div class="quiz-result-text" id="disasters-quiz-text">You scored 0 out of 5</div>
+<div class="quiz-result-feedback" id="disasters-quiz-feedback"></div>
+<button class="btn btn-primary" onclick="closeQuizResult('disasters')">Close</button>
+</div>
+<div class="quiz-actions">
+<button class="btn btn-secondary" onclick="checkQuizAnswer('disasters')">Check Answer</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/learning.js"></script></body>
+</html>

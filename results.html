@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Results - EcoLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/results.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<!-- <li><a href="login.html">Login</a></li> -->
+<!-- <li><a href="signup.html">Sign Up</a></li> -->
+<li><a class="active" href="learning.html">Learn</a></li>
+<li><a class="nav-protected hidden" href="community.html">community</a> </li>
+<li><a class="nav-protected hidden" href="DIY.html">DIY</a> </li>
+<li class="nav-protected"><a href="games.html">Games</a></li>
+<li class="nav-protected"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<main class="main-content">
+<div class="container">
+<div class="page-header">
+<h1>Performance Dashboard</h1>
+<p>Track your progress, achievements, and environmental impact</p>
+</div>
+<div class="dashboard-section">
+<div class="dashboard-header">
+<h2 class="dashboard-title">My EcoLearn Dashboard</h2>
+<div class="user-profile">
+<img alt="User" class="user-avatar" id="user-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="user-info">
+<h3 id="user-name">Guest User</h3>
+<div class="user-level" id="user-level">Beginner</div>
+</div>
+</div>
+</div>
+<div class="dashboard-grid">
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-coins"></i>
+</div>
+<div class="stat-value" id="eco-points">0</div>
+<div class="stat-label">Eco Points</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-trophy"></i>
+</div>
+<div class="stat-value" id="badges-earned">0</div>
+<div class="stat-label">Badges Earned</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-gamepad"></i>
+</div>
+<div class="stat-value" id="games-completed">0</div>
+<div class="stat-label">Games Completed</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<div class="stat-value" id="average-score">0%</div>
+<div class="stat-label">Average Score</div>
+</div>
+</div>
+<div class="progress-section">
+<h3 class="progress-title">Learning Progress</h3>
+<div class="progress-container">
+<div class="progress-header">
+<div class="progress-label">Waste Management</div>
+<div class="progress-value" id="waste-progress">0%</div>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="waste-bar" style="width: 0%;"></div>
+</div>
+</div>
+<div class="progress-container">
+<div class="progress-header">
+<div class="progress-label">Water Conservation</div>
+<div class="progress-value" id="water-progress">0%</div>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="water-bar" style="width: 0%;"></div>
+</div>
+</div>
+<div class="progress-container">
+<div class="progress-header">
+<div class="progress-label">Climate Change</div>
+<div class="progress-value" id="climate-progress">0%</div>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="climate-bar" style="width: 0%;"></div>
+</div>
+</div>
+<div class="progress-container">
+<div class="progress-header">
+<div class="progress-label">Biodiversity</div>
+<div class="progress-value" id="biodiversity-progress">0%</div>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" id="biodiversity-bar" style="width: 0%;"></div>
+</div>
+</div>
+</div>
+<div class="achievements-section">
+<h3 class="achievements-title">Achievements &amp; Badges</h3>
+<div class="badges-container">
+<div class="badge" id="badge-1">
+<i class="fas fa-seedling"></i>
+<div class="badge-tooltip">First Tree Planted</div>
+</div>
+<div class="badge" id="badge-2">
+<i class="fas fa-recycle"></i>
+<div class="badge-tooltip">Recycling Hero</div>
+</div>
+<div class="badge" id="badge-3">
+<i class="fas fa-tint"></i>
+<div class="badge-tooltip">Water Saver</div>
+</div>
+<div class="badge" id="badge-4">
+<i class="fas fa-solar-panel"></i>
+<div class="badge-tooltip">Renewable Energy Advocate</div>
+</div>
+<div class="badge" id="badge-5">
+<i class="fas fa-fish"></i>
+<div class="badge-tooltip">Ocean Protector</div>
+</div>
+<div class="badge" id="badge-6">
+<i class="fas fa-leaf"></i>
+<div class="badge-tooltip">Eco Warrior</div>
+</div>
+</div>
+</div>
+<div class="recent-activity">
+<h3 class="activity-title">Recent Activity</h3>
+<ul class="activity-list" id="activity-list">
+<li class="activity-item">
+<div class="activity-icon">
+<i class="fas fa-info-circle"></i>
+</div>
+<div class="activity-content">
+<div class="activity-text">No recent activity</div>
+<div class="activity-time">Play some games to see your activity here</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+<li><a href="games.html">Games</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/results.js"></script></body>
+</html>

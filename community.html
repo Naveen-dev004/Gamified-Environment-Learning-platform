@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Eco Community - Share Your Eco Journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+<link href="assets/css/community.css" rel="stylesheet"/></head>
+<body>
+<nav>
+<div class="nav-container">
+<div class="logo">
+<img alt="EcoLearn Logo" class="logo-img" src="https://z-cdn-media.chatglm.cn/files/2c079ebf-00f2-4fbb-ad9f-3c6e4f802c76_logo.png?auth_key=1788951519-cd6015bd3e7744ec92f0c105fb1a29c8-0-f0d50d247880be1c98f7cf11cec68dc0"/>
+<div class="name">
+<span>SYMBIOSA</span>
+</div>
+</div>
+<div class="nav-center">
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<li><a href="community.html" style="color: var(--primary-green); font-weight: 600;">Community</a></li>
+<li><a class="nav-protected hidden" href="DIY.html">DIY</a> </li>
+<li class="nav-protected hidden"><a href="games.html">Games</a></li>
+<li class="nav-protected hidden"><a href="results.html">Results</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="profile-container">
+<div class="profile-dropdown">
+<button class="profile-btn" onclick="toggleDropdown()">
+<img alt="Profile" class="profile-avatar" id="profile-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="profile-info">
+<span class="profile-name" id="profile-name">Guest</span>
+<span class="profile-role" id="profile-role">Visitor</span>
+</div>
+<i class="fas fa-chevron-down dropdown-icon"></i>
+</button>
+<div class="dropdown-content" id="profile-dropdown">
+<a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+<a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+<a href="results.html"><i class="fas fa-trophy"></i> Achievements</a>
+<div class="divider"></div>
+<a href="#" id="logout-btn" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+<a href="login.html" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+</div>
+<div class="mobile-menu-btn">
+<i class="fas fa-bars"></i>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<h1>Eco Community</h1>
+<p>Share your eco-friendly actions, inspire others, and be part of the change</p>
+</div>
+</div>
+</section>
+<section class="community-section">
+<div class="container">
+<!-- Badge Help Section -->
+<div class="badge-help">
+<h3>Earn Badges by Sharing Your Eco Actions!</h3>
+<p>Use these hashtags in your posts to earn special badges:</p>
+<div class="badge-list" id="badge-list">
+<!-- Badge items will be dynamically added here -->
+</div>
+</div>
+<!-- Post Creation Form -->
+<div class="post-form-container">
+<div class="post-form">
+<div class="user-info">
+<img alt="User" class="user-avatar" id="post-user-avatar" src="https://randomuser.me/api/portraits/lego/0.jpg"/>
+<div class="user-details">
+<h4 id="post-user-name">Guest User</h4>
+<p>Share your eco action</p>
+</div>
+</div>
+<form id="new-post-form">
+<div class="form-group">
+<textarea id="post-caption" placeholder="What eco action did you take today?" required=""></textarea>
+</div>
+<div class="form-group">
+<label class="media-upload-btn" for="media-upload">
+<i class="fas fa-camera"></i> Add Photo/Video
+                            </label>
+<input accept="image/*, video/*" id="media-upload" type="file"/>
+</div>
+<div class="media-preview" id="media-preview"></div>
+<div class="form-group">
+<input id="post-hashtags" placeholder="Add hashtags (e.g., #treeplanting, #cleanup)" type="text"/>
+</div>
+<div class="form-actions">
+<button class="btn btn-primary" type="submit">Post</button>
+<button class="btn btn-secondary" id="cancel-post" type="button">Cancel</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Posts Feed -->
+<div class="posts-feed" id="posts-feed">
+<!-- Posts will be dynamically added here -->
+</div>
+<!-- Load More Button -->
+<div class="load-more-container">
+<button class="btn btn-secondary" id="load-more-posts">Load More Posts</button>
+</div>
+</div>
+</section>
+<!-- Badge Popup -->
+<div class="badge-popup-overlay" id="badge-popup-overlay">
+<div class="badge-popup">
+<div class="badge-popup-content">
+<div class="badge-earned-text">Badge Earned!</div>
+<div class="badge-icon" id="badge-icon">
+<i class="fas fa-seedling"></i>
+</div>
+<h2 class="badge-name" id="badge-name">First Tree Planted</h2>
+<p class="badge-description" id="badge-description">You've planted your first tree and shared it with the community!</p>
+<button class="badge-close-btn" id="badge-close-btn">Awesome!</button>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h3>About EcoLearn</h3>
+<p>We're transforming environmental education in India through gamification and real-world action, aligned with NEP 2020 and SDG goals.</p>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="learning.html">Learn</a></li>
+<li><a href="community.html">Community</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="signup.html">Sign Up</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Resources</h3>
+<ul>
+<li><a href="#">Teacher Resources</a></li>
+<li><a href="#">Student Guides</a></li>
+<li><a href="#">Eco-Challenges</a></li>
+<li><a href="#">Research</a></li>
+<li><a href="#">Blog</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Contact Us</h3>
+<ul>
+<li><i class="fas fa-envelope"></i> info@ecolearn.in</li>
+<li><i class="fas fa-phone"></i> +91 98765 43210</li>
+<li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 EcoLearn. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script src="assets/js/community.js"></script></body>
+</html>
